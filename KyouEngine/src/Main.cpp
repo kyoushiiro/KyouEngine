@@ -48,7 +48,7 @@ int main()
 		return -1;
 	}
 
-	Shader ourShader("4.6.shader.vs", "4.6.shader.fs");
+	Shader ourShader("src/4.6.shader.vs", "src/4.6.shader.fs");
 
 	glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
 
