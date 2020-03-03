@@ -31,7 +31,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\4.6.shader.vs" />
-    <None Include="src\4.6.shader.fs" />
+    <None Include="4.6.shader.fs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="4.6.shader.vs">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
