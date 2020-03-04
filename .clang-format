@@ -1,7 +1,7 @@
 AccessModifierOffset: -3
 AlignEscapedNewlinesLeft: false
 AlignTrailingComments: false
-AlignAfterOpenBracket: AlwaysBreak
+AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: false
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortFunctionsOnASingleLine: false
@@ -10,7 +10,8 @@ AllowShortLoopsOnASingleLine: true
 AllowShortBlocksOnASingleLine: true
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: false
-BinPackParameters: false
+BinPackArguments: true
+BinPackParameters: true
 BreakBeforeBinaryOperators: false
 BreakBeforeBraces: Custom
 BraceWrapping:   
@@ -32,6 +33,7 @@ BraceWrapping:
 BreakBeforeTernaryOperators: false
 BreakConstructorInitializersBeforeComma: false
 ColumnLimit: 80
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
 IndentWidth: 3
 Language: Cpp
 MaxEmptyLinesToKeep: 2
