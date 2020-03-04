@@ -76,8 +76,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>W:\VS2019\KyouEngine\Dependencies\glad-gl-4.6\include;W:\VS2019\KyouEngine\Dependencies\glfw-3.3.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>W:\VS2019\KyouEngine\Dependencies\glfw-3.3.2\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Dependencies\glad-gl-4.6\include;$(SolutionDir)\Dependencies\glm-0.9.8.5;$(SolutionDir)Dependencies\glfw-3.3.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw-3.3.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -86,8 +86,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>W:\VS2019\KyouEngine\Dependencies\glad-gl-4.6\include;W:\VS2019\KyouEngine\Dependencies\glfw-3.3.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>W:\VS2019\KyouEngine\Dependencies\glfw-3.3.2\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Dependencies\glad-gl-4.6\include;$(SolutionDir)\Dependencies\glm-0.9.8.5;$(SolutionDir)Dependencies\glfw-3.3.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\glfw-3.3.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
