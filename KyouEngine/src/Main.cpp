@@ -23,7 +23,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 /* Camera */
-Camera camera(glm::vec3(0.0f, 1.0f, 4.0f));
+Camera camera(glm::vec3(-1.5f, -1.5f, 4.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -171,17 +171,7 @@ int main()
       std::cout << "Failed to find proj uniform location." << std::endl;
       return -1;
    }
-   GLuint objectColor_loc = glGetUniformLocation(ourShader.ID, "objectColor");
-   if (objectColor_loc == -1) {
-      std::cout << "Failed to find objectColor uniform location. " << std::endl;
-      return -1;
-   }
-   GLuint lightColor_loc = glGetUniformLocation(ourShader.ID, "lightColor");
-   if (lightColor_loc == -1) {
-      std::cout << "Failed to find lightColor uniform location. " << std::endl;
-      return -1;
-   }
-   GLuint lightPos_loc = glGetUniformLocation(ourShader.ID, "lightPos");
+   GLuint lightPos_loc = glGetUniformLocation(ourShader.ID, "light.position");
    if (lightPos_loc == -1) {
       std::cout << "Failed to find lightPos uniform location. " << std::endl;
       return -1;
@@ -191,6 +181,15 @@ int main()
       std::cout << "Failed to find viewPos uniform location. " << std::endl;
       return -1;
    }
+   GLuint ambient_loc = glGetUniformLocation(ourShader.ID, "material.ambient");
+   GLuint diffuse_loc = glGetUniformLocation(ourShader.ID, "material.diffuse");
+   GLuint specular_loc =
+       glGetUniformLocation(ourShader.ID, "material.specular");
+   GLuint shininess_loc =
+       glGetUniformLocation(ourShader.ID, "material.shininess");
+   GLuint lambient_loc = glGetUniformLocation(ourShader.ID, "light.ambient");
+   GLuint ldiffuse_loc = glGetUniformLocation(ourShader.ID, "light.diffuse");
+   GLuint lspecular_loc = glGetUniformLocation(ourShader.ID, "light.specular");
 
    lightShader.use();
    GLuint smodel_loc = glGetUniformLocation(lightShader.ID, "model");
@@ -230,11 +229,16 @@ int main()
 
       glUniformMatrix4fv(view_loc, 1, GL_FALSE, glm::value_ptr(view));
       glUniformMatrix4fv(proj_loc, 1, GL_FALSE, glm::value_ptr(proj));
-      glUniform3f(objectColor_loc, 1.0f, 0.5f, 0.31f);
-      glUniform3f(lightColor_loc, 1.0f, 1.0f, 1.0f);
       glUniform3f(lightPos_loc, lightPos.x, lightPos.y, lightPos.z);
       glUniform3f(viewPos_loc, camera.position.x, camera.position.y,
                   camera.position.z);
+      glUniform3f(ambient_loc, 1.0f, 0.5f, 0.31f);
+      glUniform3f(diffuse_loc, 1.0f, 0.5f, 0.31f);
+      glUniform3f(specular_loc, 0.5f, 0.5f, 0.5f);
+      glUniform1f(shininess_loc, 32.0f);
+      glUniform3f(lambient_loc, 0.2f, 0.2f, 0.2f);
+      glUniform3f(ldiffuse_loc, 0.5f, 0.5f, 0.5f);
+      glUniform3f(lspecular_loc, 1.0f, 1.0f, 1.0f);
 
       glBindVertexArray(VAO);
       for (unsigned int i = 0; i < 1; i++) {
