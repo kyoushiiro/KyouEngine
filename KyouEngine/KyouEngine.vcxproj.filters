@@ -42,10 +42,14 @@
   <ItemGroup>
     <CopyFileToFolders Include="4.6.shader.fs" />
     <CopyFileToFolders Include="4.6.shader.vs" />
+    <CopyFileToFolders Include="4.6.lightshader.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\container.jpg">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="4.6.lightshader.vs" />
   </ItemGroup>
 </Project>
